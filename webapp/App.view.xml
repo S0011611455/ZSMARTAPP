@@ -1,0 +1,10 @@
+<mvc:View controllerName="com.wakefern.zsmartapp.App"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App id ="app">
+    <Page id="page" title="{i18n>title}">
+        <!-- <content /> -->
+         
+    </Page>
+    </App>
+</mvc:View>

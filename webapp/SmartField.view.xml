@@ -1,0 +1,54 @@
+<mvc:View controllerName="com.wakefern.zsmartapp.SmartField"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:sv="sap.ui.comp.smartvariants" displayBlock="true" height="100%">
+	 
+			 
+		<smartForm:SmartForm editTogglable="true" title="{i18n>stitle}">
+			<!-- <smartForm:layout>
+			<smartForm:ColumnLayout emptyCellsLarge="4" labelCellsLarge="4" columnsM="2" columnsL="2" columnsXL="2"/>
+		</smartForm:layout>  -->
+			<!-- <smartForm:semanticObjectController> <sl:SemanticObjectController navigationTargetsObtained="onNavigationTargetsObtained" navigate="onNavigate" />
+		</smartForm:semanticObjectController>   -->
+			<smartForm:Group label="Product">
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{ProductId}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{Name}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement elementForLabel="1">
+					<smartField:SmartField value="{CategoryName}" />
+					<smartField:SmartField value="{Description}" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{Price}" id="idPrice" />
+				</smartForm:GroupElement>
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{NameLink}" id="idName" editable="false"/>
+				</smartForm:GroupElement>
+			</smartForm:Group>
+			<smartForm:Group label="Supplier">
+				<smartForm:GroupElement>
+					<smartField:SmartField value="{SupplierName}" />
+				</smartForm:GroupElement>
+			</smartForm:Group>
+		 </smartForm:SmartForm> 
+		
+		
+		<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Products">
+			<smartFilterBar:controlConfiguration>
+				<smartFilterBar:ControlConfiguration key="Category" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false">
+				</smartFilterBar:ControlConfiguration>
+			</smartFilterBar:controlConfiguration>
+		</smartFilterBar:SmartFilterBar>
+		<smartTable:SmartTable id="smartTable_ResponsiveTable" smartFilterId="smartFilterBar" smartVariant="pageVariantId" persistencyKey="perskey" tableType="ResponsiveTable" editable="false" entitySet="Products" useVariantManagement="true" useTablePersonalisation="true" header="Products" showRowCount="true" useExportToExcel="false" enableAutoBinding="true">
+		</smartTable:SmartTable>
+  
+</mvc:View>
